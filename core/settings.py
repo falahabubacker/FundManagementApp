@@ -77,21 +77,17 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 DATABASES = {
     'default': {
-        #'ENGINE': 'django.db.backends.sqlite3',
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'FundManagementApp',
         'USER': 'postgres',
         'PASSWORD': 'Allahis1',
         'HOST': 'localhost',
         'PORT': '5432',
+    },
+    'alternative_db': {
+        'ENGINE': 'django.db.backends.sqlite3',
     }
 }
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#     }
-# }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
