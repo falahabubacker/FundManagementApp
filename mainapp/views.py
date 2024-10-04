@@ -7,5 +7,8 @@ def home(request):
     }
     return render(request, 'home.html', context)
 
+def details(request):
+    return render(request, 'event-student.html')
+
 def add(request):
     return render(request, 'event-add.html')
