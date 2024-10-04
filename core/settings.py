@@ -76,7 +76,7 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+    'postgres': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'FundManagementApp',
         'USER': 'postgres',
@@ -84,8 +84,9 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': '5432',
     },
-    'alternative_db': {
+    'default': {
         'ENGINE': 'django.db.backends.sqlite3',
+	'NAME': BASE_DIR / 'db.sqlite3'
     }
 }
 
