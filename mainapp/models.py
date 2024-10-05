@@ -30,6 +30,6 @@ class Event(models.Model):
     fund_pps = models.DecimalField(max_digits=10, decimal_places=2, default=0, blank=True)
     branch = models.ManyToManyField(Group, related_name='branch', limit_choices_to={'name__regex': r'^[a-zA-Z]{2}$'})
     batch = models.ManyToManyField(Group, related_name='batch', limit_choices_to={'name__regex': r'^\d{2}$'})
-    manager_1 = models.ForeignKey(User, on_delete=models.CASCADE, related_name='manager_1')
-    manager_2 = models.ForeignKey(User, on_delete=models.CASCADE, related_name='manager_2', blank=True)
+    managers = models.ManyToManyField(User, related_name='managers')
+    paid = models.ManyToManyField(User, related_name='paid', blank=True)
     is_active = models.BooleanField(default=False)
