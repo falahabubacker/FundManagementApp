@@ -49,7 +49,6 @@
                         {% for batch in event.batch.all %}
                             <details style="padding-left: 20px;" {% if event.batch.all != none %} open {% endif %} class="batch-list">
                                 <summary style="color: white;">{{batch.name}}</summary>
-                                <span>{{event.batch.all}}</span>
                                 {% for student in batch.user_set.all %}
                                     {% if student in branch.user_set.all %}
                                         <div class="student-item">
@@ -74,7 +73,7 @@
             </div>
             <div class="search-bar">
                 <input id=searchbar type="text" placeholder="search ">
-                <div class="button" onclick="if (document.getElementById('searchbar').style.display == 'none') {document.getElementById('searchbar').style.display = 'flex'} else {document.getElementById('searchbar').style.display = 'none'}">
+                <div class="button" onclick="if (document.getElementById('searchbar').style.display == '' || document.getElementById('searchbar').style.display == 'none') {document.getElementById('searchbar').style.display = 'flex'} else {document.getElementById('searchbar').style.display = 'none'}">
                     <span class="material-symbols-outlined" style="font-size: 22px;">search</span>
                 </div>
             </div>

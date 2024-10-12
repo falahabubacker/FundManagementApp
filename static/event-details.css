@@ -184,6 +184,9 @@
    align-items: center;
    height: 100%;
 }
+.search-bar .button :hover{
+   cursor: pointer;
+}
 .search-bar .button.span {
    width: 32px;
    display: block;
